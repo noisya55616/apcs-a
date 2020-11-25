@@ -2,6 +2,11 @@ import java.util.*;
 import java.io.*; 
 
 public class Main {
+    /*
+     * @param in is a non-empty string
+     * @param rem is a non-empty string
+     * @return a string that is in with all instances of rem removed
+     */
     static String removeAll(String in, String rem) {
         String out = in;
         if (!rem.equals("")) {

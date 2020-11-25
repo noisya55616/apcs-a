@@ -2,6 +2,10 @@ import java.util.*;
 import java.io.*; 
 
 public class Main {
+    /*
+     * @param in is a non-empty string
+     * @return a reversed version of in
+     */
     static String reverse(String in) {
         if (in.length() <= 1) return in;
         // A recursive method
@@ -9,7 +13,12 @@ public class Main {
         else return in.substring(in.length() - 1, in.length()) + reverse(in.substring(0, in.length() - 1));
     }
 
-    static String removeAll(String in, String rem) {
+    /*
+     * @param in is a non-empty string
+     * @param rem is a non-empty string
+     * @return a string that is in with all instances of rem removed
+     */
+     static String removeAll(String in, String rem) {
         String out = in;
         if (!rem.equals("")) {
             while (out.indexOf(rem) != -1) {
@@ -23,6 +32,10 @@ public class Main {
         }
     }
 
+    /*
+     * @param in is a non-empty string
+     * @return a boolean value of whether or not in is a palindrome
+     */
     static boolean isPalindrome(String in) {
         if (in.length() <= 1) return true;
         else {
@@ -60,16 +73,18 @@ public class Main {
         }
     }
 
+    /*
+     * @param in is a non-empty string
+     * @return the Pig Latin version of in
+     */
     static String toPigLatin(String in) {
         String out;
         if (in.indexOf(" ") == -1) {
             out = toPigLatinWord(in);
             return out;
         }
-        else {  // This looks through the input string for individual words (separated by spaces) and
-                // then uses the other method (toPigLatinWord()) to translate the words and add them
-                // to the output
-            out = "";
+        else {          // This looks through the input string for individual words (separated by spaces) and then
+            out = "";   // uses the other method (toPigLatinWord()) to translate the words and add them to the output
             out = toPigLatinWord(in.substring(0, in.indexOf(" ")));
             in = in.substring(in.indexOf(" ") + 1, in.length());
 
@@ -84,9 +99,13 @@ public class Main {
         }
     }
 
-    static String toPigLatinWord(String in) { // This method translates only a single word into Pig Latin
-        String out = in;
-        String vowels = "AEIUOaeiou";
+    /*
+     * @param in is a non-empty string without any spaces
+     * @return the Pig Latin version of in
+     */
+    static String toPigLatinWord(String in) {   // This method translates only a single word into Pig Latin
+        String out = in;                        // It makes it a lot easier to translate sentences, and is
+        String vowels = "AEIUOaeiou";           // more modular.
         int firstVowel = -1;
         int i = 0;
 
