@@ -3,7 +3,6 @@ package menu;
 import menu.MenuItem;
 
 public class Sandwich implements MenuItem {
-    
     String name;
     double price;
 
